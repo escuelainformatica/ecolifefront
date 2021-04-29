@@ -1,0 +1,101 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/_Layout1.cshtml";
+}
+<!-- Feature Area Start -->
+<section class="feature-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Section Title -->
+                <div class="section-title">
+                    <h2>Featured Products</h2>
+                    <p>Add products to weekly line up</p>
+                </div>
+                <!-- Section Title -->
+            </div>
+        </div>
+        <!-- Feature Slider Start -->
+        <div class="feature-slider owl-carousel owl-nav-style">
+            @foreach(var destacado in ViewBag.destacados) {
+            <!-- Single Item -->
+            <div class="feature-slider-item">
+                <article class="list-product">
+                    <div class="img-block">
+                        <a href="single-product.html" class="thumbnail">
+                            <img class="first-img" src="assets\images\product-image\organic\@destacado.Imagen" alt="">
+                            <img class="second-img" src="assets\images\product-image\organic\@destacado.Imagen" alt="">
+                        </a>
+                        <div class="quick-view">
+                            <a class="quick_view" href="#" data-link-action="quickview" title="Quick view" data-toggle="modal" data-target="#exampleModal">
+                                <i class="ion-ios-search-strong"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-decs">
+                        <a class="inner-link" href="shop-4-column.html"><span>@destacado.ProductoCategoria.Nombre</span></a>
+                        <h2><a href="single-product.html" class="product-link">@destacado.Nombre</a></h2>
+                        <div class="rating-product">
+                            <i class="ion-android-star"></i>
+                            <i class="ion-android-star"></i>
+                            <i class="ion-android-star"></i>
+                            <i class="ion-android-star"></i>
+                            <i class="ion-android-star"></i>
+                        </div>
+                        <div class="pricing-meta">
+                            <ul>
+                                <li class="old-price not-cut">$@destacado.Precio</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+         
+            </div>
+            }          
+        </div>
+        <!-- Feature Slider End -->
+    </div>
+</section>
+<!-- Feature Area End -->
+
+<!-- Category Area Start -->
+<section class="categorie-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Section Title -->
+                <div class="section-title mt-res-sx-30px mt-res-md-30px">
+                    <h2>Popular Categories</h2>
+                    <p>Add Popular Categories to weekly line up</p>
+                </div>
+                <!-- Section Title -->
+            </div>
+        </div>
+        <!-- Category Slider Start -->
+        <div class="category-slider owl-carousel owl-nav-style">
+            @foreach (var cat in ViewBag.categorias)
+            {
+                <!-- Single item -->
+                <div class="category-item">
+                    <div class="category-list mb-30px">
+                        <div class="category-thumb">
+                            <a href="shop-4-column.html">
+                                <img src="assets\images\product-image\organic\@cat.Imagen" alt="">
+                            </a>
+                        </div>
+                        <div class="desc-listcategoreis">
+                            <div class="name_categories">
+                                <h4>@cat.Nombre</h4>
+                            </div>
+                            <span class="number_product">17 Products</span>
+                            <a href="shop-4-column.html"> Shop Now <i class="ion-android-arrow-dropright-circle"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<!-- Category Area End  -->
