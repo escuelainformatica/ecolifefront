@@ -15,6 +15,7 @@ namespace ecolifefront.repo
             {
                resultado=database.Producto.ToList();
             }
+
             return resultado;
         }
         public static List<Producto> ListarDestacados()
