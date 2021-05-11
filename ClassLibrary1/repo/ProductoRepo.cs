@@ -16,6 +16,14 @@ namespace ClassLibrary1.repo
     {
         public static void Insertar(Producto prod)
         {
+            if(prod.Destacado==1) {
+                using (ConnectionMultiplexer redis = ConnectionMultiplexer.Connect("localhost"))
+                {
+                    var redisdb=redis.GetDatabase();
+                    redisdb.KeyDelete("destacados");
+                }
+            }
+
             using (var database = new Model1())
             {
                 database.Producto.Add(prod);
