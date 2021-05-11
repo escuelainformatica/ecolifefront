@@ -1,5 +1,6 @@
-namespace ecolifefront.database
+namespace ClassLibrary1.database
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -24,6 +25,9 @@ namespace ecolifefront.database
         [StringLength(200)]
         public string Imagen { get; set; }
 
+        public byte[] ImagenBinario {set; get;}
+
+        [JsonIgnore]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Producto> Producto { get; set; }
     }

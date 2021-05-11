@@ -1,5 +1,6 @@
-namespace ecolifefront.database
+namespace ClassLibrary1.database
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -27,6 +28,11 @@ namespace ecolifefront.database
 
         public int? Destacado { get; set; }
 
+        public int? Estrella { get; set; }
+
+        public string ImagenBinario {set; get;}
+
+   
         public virtual ProductoCategoria ProductoCategoria { get; set; }
     }
 }

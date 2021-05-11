@@ -1,4 +1,5 @@
-﻿using ecolifefront.repo;
+﻿using ClassLibrary1.repo;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,8 @@ namespace ecolifefront.Controllers
         // GET: Front
         public ActionResult Home()
         {
-            ViewBag.categorias=ProductoCategoriaRepo.Listar();
+            //ViewBag.categorias=ProductoCategoriaRepo.ListarAgrupadoRaw();
+            ViewBag.categorias=ProductoCategoriaRepo.ListarAgrupado();
             ViewBag.destacados=ProductoRepo.ListarDestacados();
 
 

@@ -37,11 +37,9 @@
                         <a class="inner-link" href="shop-4-column.html"><span>@destacado.ProductoCategoria.Nombre</span></a>
                         <h2><a href="single-product.html" class="product-link">@destacado.Nombre</a></h2>
                         <div class="rating-product">
+                            @for(int i=0;i<destacado.Estrella;i++) {
                             <i class="ion-android-star"></i>
-                            <i class="ion-android-star"></i>
-                            <i class="ion-android-star"></i>
-                            <i class="ion-android-star"></i>
-                            <i class="ion-android-star"></i>
+                            }
                         </div>
                         <div class="pricing-meta">
                             <ul>
@@ -49,8 +47,7 @@
                             </ul>
                         </div>
                     </div>
-                </article>
-         
+                </article>         
             </div>
             }          
         </div>
@@ -81,14 +78,21 @@
                     <div class="category-list mb-30px">
                         <div class="category-thumb">
                             <a href="shop-4-column.html">
-                                <img src="assets\images\product-image\organic\@cat.Imagen" alt="">
+                                @if (cat.ImagenBinario == null)
+                                {
+                                    <img src="assets\images\product-image\organic\@cat.Imagen" alt="">
+                                }
+                                else
+                                {
+                                    <img src="data:image;base64,@System.Convert.ToBase64String(cat.ImagenBinario)"  />
+                                }
                             </a>
                         </div>
                         <div class="desc-listcategoreis">
                             <div class="name_categories">
                                 <h4>@cat.Nombre</h4>
                             </div>
-                            <span class="number_product">17 Products</span>
+                            <span class="number_product">@cat.Cantidad Products</span>
                             <a href="shop-4-column.html"> Shop Now <i class="ion-android-arrow-dropright-circle"></i></a>
                         </div>
                     </div>

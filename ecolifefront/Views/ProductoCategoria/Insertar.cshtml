@@ -1,0 +1,35 @@
+﻿@model ProductoCategoria
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Insertar</title>
+</head>
+<body>
+    <div> 
+        <div>
+            @ViewBag.mensaje
+        </div>
+        <form method="post" enctype="multipart/form-data">
+            @Html.AntiForgeryToken()
+            id:<input type="text" value="@Model.Id" name="Id" /><br />
+            Nombre:<input type="text" value="@Model.Nombre" name="Nombre" />
+            @Html.ValidationMessageFor(m => m.Nombre) <br />
+            Imagen:<input type="text" value="@Model.Imagen" name="Imagen" /><br />
+
+            Imagen Subir: <input type="file" name="ImagenSubir" /><br />
+            <input type="submit" name="boton" value="enviar" />
+
+
+
+        </form>
+        
+
+    </div>
+</body>
+</html>
