@@ -484,6 +484,9 @@
     <Content Include="Views\_Layout1.cshtml" />
     <Content Include="Views\Front\Home.cshtml" />
     <Content Include="Views\ProductoCategoria\Insertar.cshtml" />
+    <Content Include="Views\Front\MostrarProducto.cshtml" />
+    <Content Include="Views\Front\productonoencontrado.cshtml" />
+    <Content Include="Views\Front\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

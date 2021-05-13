@@ -13,8 +13,9 @@
 <body>
     <div> 
         <div>
-            @ViewBag.mensaje
+            @ViewBag.mensaje 
         </div>
+        <div>Usuario actual: @ViewBag.Usuario.NombreCompleto</div>
         <form method="post" enctype="multipart/form-data">
             @Html.AntiForgeryToken()
             id:<input type="text" value="@Model.Id" name="Id" /><br />

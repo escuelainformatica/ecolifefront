@@ -97,12 +97,14 @@
     <Compile Include="database\Model1.cs" />
     <Compile Include="database\Producto.cs" />
     <Compile Include="database\ProductoCategoria.cs" />
+    <Compile Include="database\Usuario.cs" />
     <Compile Include="Models\AgrupacionProductoxCategoria.cs" />
-    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="repo\ProductoCategoriaRepo.cs" />
     <Compile Include="repo\ProductoRepo.cs" />
     <Compile Include="repo\ProductoRepoADONET.cs" />
+    <Compile Include="repo\UsuarioRepo.cs" />
+    <Compile Include="utilidades\UtilSeguridad.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

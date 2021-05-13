@@ -14,6 +14,21 @@ namespace ClassLibrary1.repo
 
     public class ProductoRepo
     {
+        public static Producto ObtenerPorNombre(string nombre)
+        {
+            var prod=new Producto();
+            
+            using (var database = new Model1())
+            {
+                // nombre deberia ser un indice en la base de datos
+                // First (si no encuentra el valor, genera un error)
+                // FirstOrDefault (si no encuentra el valor, devuelve un nulo)
+                prod=database.Producto.FirstOrDefault(p=>p.Nombre==nombre);
+            }
+            return prod;
+        }
+
+
         public static void Insertar(Producto prod)
         {
             if(prod.Destacado==1) {

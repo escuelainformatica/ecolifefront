@@ -14,6 +14,7 @@ namespace ClassLibrary1.database
 
         public virtual DbSet<Producto> Producto { get; set; }
         public virtual DbSet<ProductoCategoria> ProductoCategoria { get; set; }
+        public virtual DbSet<Usuario> Usuario { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

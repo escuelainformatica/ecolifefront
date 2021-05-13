@@ -14,12 +14,27 @@ namespace ecolifefront.Controllers
         [HttpGet]  
         public ActionResult Insertar()
         {
+            var usuario=(Usuario)Session["usuario"];
+            if(usuario==null)
+            {
+                Response.Redirect("/Front/Login",true);
+                return null;
+            }
+            ViewBag.Usuario=usuario;
+
             var cat=new ProductoCategoria();
             return View(cat);
         }
         [HttpPost]  
         public ActionResult Insertar(ProductoCategoria cat)
         {
+            var usuario=(Usuario)Session["usuario"];
+            if(usuario==null)
+            {
+                Response.Redirect("/Front/Login",true);
+                return null;
+            }
+            ViewBag.Usuario=usuario;
             // inicio subir archivo
             if (Request.Files["ImagenSubir"].ContentLength<50000) {
                 byte[] fileData = null;
